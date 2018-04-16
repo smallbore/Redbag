@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    @@include('./include/header.html')
+    <title>收货地址</title>
+</head>
+<body>
+<div class="page">
+    <div class="page-hd">
+        @@include('./include/page-hd.html', {
+        "title": "收货地址",
+        "menu": ""
+        })
+    </div>
+    <div class="page-bd">
+        <!-- 页面内容-->
+        <div class="addr_list">
+            <div class="weui-cells card-cells">
+                <div class="weui-cell">
+                    <div class="weui-cell__bd">
+                        <div><span>我是一只小木鱼</span> <span>18620580890</span></div>
+                        <div class="fs24 text-gray mt10">广东省 广州市 天河区 天河北路都市华庭201号</div>
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cells_checkbox">
+                        <label class="weui-check__label" for="x11">
+                            <input type="radio" checked="" class="weui-check" name="radio1" id="x11">
+                            <span class="weui-icon-checked"></span>
+                            <span>设为默认</span>
+                        </label>
+                    </div>
+                    <div class="weui-cell__bd tr">
+                        <div class="action_group">
+                            <a href="#" class="action_edit"><i class="icon_edit"></i><span>编辑</span></a>
+                            <a href="#" class="action_del js_del"><i class="icon_del"></i><span>删除</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="weui-cells card-cells">
+                <div class="weui-cell">
+                    <div class="weui-cell__bd">
+                        <div><span>最美的期待C哩</span> <span>18620580890</span></div>
+                        <div class="fs24 text-gray mt10">广东省 广州市 天河区 天河北路都市华庭201号</div>
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cells_checkbox">
+                        <label class="weui-check__label" for="x12">
+                            <input type="radio" class="weui-check" name="radio1" id="x12">
+                            <span class="weui-icon-checked"></span>
+                            <span>设为默认</span>
+                        </label>
+                    </div>
+                    <div class="weui-cell__bd tr">
+                        <div class="action_group">
+                            <a href="#" class="action_edit"><i class="icon_edit"></i><span>编辑</span></a>
+                            <a href="#" class="action_del js_del"><i class="icon_del"></i><span>删除</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="weui-btn-area">
+            <a class="weui-btn weui-btn_primary" href="新增收货地址.html">新增地址</a>
+        </div>
+    </div>
+    @@include('./include/bottom-bar.html',{
+    "item1": "active",
+    "item2": "",
+    "item3": "",
+    "item4": ""
+    })
+</div>
+
+@@include('./include/footer.html')
+<script>
+
+    $("#city-picker").cityPicker();
+
+</script>
+</body>
+</html>

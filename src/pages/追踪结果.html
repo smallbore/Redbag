@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    @@include('./include/header.html')
+    <title>追踪结果</title>
+</head>
+<body>
+<div class="page">
+    <div class="page-hd">
+        @@include('./include/page-hd.html', {
+        "title": "追踪结果",
+        "menu": ""
+        })
+    </div>
+    <div class="page-bd cardbottom_bg" style="background-color: #fff;">
+        <!-- 页面内容-->
+        <div>
+            <img style="width: 100%;" src="../assets/images/ch_img_05.png" alt="">
+        </div>
+        <div class="fs32 pad60">
+            <div>产品编号：005-1</div>
+            <div>产品名称：优源三颗姜洗发露</div>
+        </div>
+        <div class="zzjg_box">
+            <div class="zzjg_box_con">
+                <div class="wuliu_bd">
+                    <ul>
+                        <li class="weui-flex cur">
+                            <div class="weui-flex__item">
+                                <div class="weui-flex__item wlcont">
+                                    <div class="zt">状态：手机发货</div>
+                                    <p class="text-muted">发货单号：SM69855746</p>
+                                    <p class="text-muted">发货日期：2017.07.10 16:04:25</p>
+                                    <p class="text-muted">货物追踪：由厂家发送到梁月娥</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="weui-flex">
+                            <div class="weui-flex__item wlcont">
+                                <div class="zt">状态：手机发货</div>
+                                <p class="text-muted">发货单号：SM69855746</p>
+                                <p class="text-muted">发货日期：2017.07.10 16:04:25</p>
+                                <p class="text-muted">货物追踪：由厂家发送到梁月娥</p>
+                            </div>
+                        </li>
+                        <li class="weui-flex">
+                            <div class="weui-flex__item">
+                                <div class="weui-flex__item wlcont">
+                                    <div class="zt">状态：手机发货</div>
+                                    <p class="text-muted">发货单号：SM69855746</p>
+                                    <p class="text-muted">发货日期：2017.07.10 16:04:25</p>
+                                    <p class="text-muted">货物追踪：由厂家发送到梁月娥</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="tc text-muted mt20" style="color: #fff;">授权单位：广东正品信息科技有限公司</div>
+    </div>
+</div>
+
+@@include('./include/footer.html')
+<script>
+    $("#picker").picker({
+        title: "请选择",
+        cols: [
+            {
+                textAlign: 'center',
+                values: ['类型1', '类型2', '类型3', '类型4']
+            }
+        ],
+        onChange: function (p, v, dv) {
+            $("#type").html(v);
+        }
+    });
+</script>
+</body>
+</html>

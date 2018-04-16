@@ -1,0 +1,33 @@
+
+@import "../../base/fn";
+
+.weui-cell_access {
+    .setTapColor();
+    color: inherit;
+    &:active {
+        background-color: rgba(246,246,246,0.6);
+    }
+    .weui-cell__ft {
+        padding-right: 13px;/*no*/
+        position: relative;
+        &:after {
+            content: " ";
+            .setArrow(right, 6px, #C8C8CD, 1px);/*no*/
+            position: absolute;
+            top: 50%;
+            margin-top: -4px;/*no*/
+            right: 2px;/*no*/
+        }
+    }
+}
+.weui-cell_link{
+    color: @weuiLinkColorDefault;
+    font-size: 14px;/*no*/
+
+    // 由于weui-cell:first-child的:before为隐藏，所以这里要重新显示出来
+    &:first-child{
+        &:before{
+            display: block;
+        }
+    }
+}

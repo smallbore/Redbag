@@ -1,0 +1,77 @@
+
+@import "../../base/fn";
+
+/*
+z-index:
+0: .weui-swiped-btn
+1: .weui-cell_swiped .weui-cell__bd
+2: .weui-cells和.weui-cell的1px线
+*/
+
+.weui-cells {
+    margin-top: @weuiCellsMarginTop;/*no*/
+    background-color: @weuiCellBg;
+    line-height: @weuiCellLineHeight;/*no*/
+    font-size: @weuiCellFontSize; /*no*/
+
+    overflow: hidden; //因为每个cell的border使用before元素left搞的，ie下伪元素的containing block估计跟标准不同，在cell上用oh不生效
+
+    // onepx
+    position: relative;
+    &:before {
+        .setTopLine(@weuiCellBorderColor);
+        z-index: 2;
+    }
+    &:after {
+        .setBottomLine(@weuiCellBorderColor);
+        z-index: 2;
+    }
+}
+
+.weui-cells__title {
+    margin-top: .77em; // 15px - 行高
+    margin-bottom: .77em; // 15px - 行高
+    padding-left: @weuiCellGapH;/*no*/
+    padding-right: @weuiCellGapH;/*no*/
+    color: @weuiTextColorGray;
+    font-size: @weuiCellTipsFontSize;/*no*/
+
+    & + .weui-cells {
+        margin-top: 0;
+    }
+}
+
+.weui-cells__tips {
+    margin-top: .3em; // 8px - 行高
+    color: @weuiTextColorGray;
+    padding-left: @weuiCellGapH;/*no*/
+    padding-right: @weuiCellGapH;/*no*/
+    font-size: @weuiCellTipsFontSize;/*no*/
+}
+
+.weui-cell {
+    padding: @weuiCellGapV @weuiCellGapH;/*no*/
+    position: relative; //这个是为了兼容cells容器onepx方案被before挡住而做的
+    display: flex;
+    align-items: center;
+    &:before {
+        .setTopLine(@weuiCellBorderColor);
+        left: @weuiCellGapH;/*no*/
+        z-index: 2;
+    }
+    &:first-child {
+        &:before {
+            display: none;
+        }
+    }
+}
+.weui-cell_primary{
+    align-items: flex-start;
+}
+.weui-cell__bd{
+    flex: 1;
+}
+.weui-cell__ft {
+    text-align: right;
+    color: @weuiTextColorGray;
+}

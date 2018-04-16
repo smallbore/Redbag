@@ -1,0 +1,26 @@
+.weui-actionsheet {
+  z-index: @zindex-popout;
+
+  .weui-actionsheet__title {
+    padding: 0;
+    text-align: center;
+    font-size: 16px;/*no*/
+    color: #999;
+    background-color: #f4f4f4;
+    position: relative;
+    height: 40px;/*no*/
+
+    &:after {
+      content: " ";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;/*no*/
+      border-top: 1px solid #d9d9d9;/*no*/
+      color: #d9d9d9;
+      transform-origin: 0 100%;
+      transform: scaleY(.5);
+    }
+  }
+}

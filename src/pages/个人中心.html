@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    @@include('./include/header.html')
+    <title> 个人中心 </title>
+</head>
+<body>
+<div class="page">
+    <div class="page-hd">
+        @@include('./include/page-hd.html', {
+        "title": "个人中心",
+        "menu": ""
+        })
+    </div>
+    <div class="page-bd page_my">
+        <!-- 页面内容-->
+        <div class="my_top">
+            <div class="weui-cell weui-cell_access">
+                <div class="weui-cell__hd">
+                    <div class="avatar">
+                        <img src="../assets/images/tx.jpg" alt="">
+                    </div>
+                </div>
+                <div class="weui-cell__bd">
+                    <h3>我是一只小木鱼</h3>
+                    <p><img class="icon_zvip" src="../assets/images/icon_zvip.png" alt=""><span>联合创始人</span></p>
+                </div>
+                <div class="weui-cell__ft"></div>
+            </div>
+        </div>
+        <div class="card-flex">
+            <a href="我的名片.html" class="flex_item">
+                <div class="icon">
+                    <img src="../assets/images/my_icon_01.png" alt="">
+                </div>
+                <div class="flex_label">我的名片</div>
+            </a>
+            <a href="我的团队.html" class="flex_item">
+                <div class="icon">
+                    <img src="../assets/images/my_icon_02.png" alt="">
+                </div>
+                <div class="flex_label">我的团队</div>
+            </a>
+            <a href="邀请代理商.html" class="flex_item">
+                <div class="icon">
+                    <img src="../assets/images/my_icon_03.png" alt="">
+                </div>
+                <div class="flex_label">邀请代理商</div>
+            </a>
+        </div>
+
+        <div class="weui-cells qcard">
+            <a href="货单列表.html" class="weui-cell weui-cell_access">
+                <div class="weui-cell__hd">
+                    <img class="hd_icon" src="../assets/images/my_hd_icon_05.png" alt="">
+                </div>
+                <div class="weui-cell__bd">我的发货单</div>
+                <div class="weui-cell__ft"></div>
+            </a>
+            <a href="货单列表.html" class="weui-cell weui-cell_access">
+                <div class="weui-cell__hd">
+                    <img  class="hd_icon" src="../assets/images/my_hd_icon_04.png" alt="">
+                </div>
+                <div class="weui-cell__bd">我的收货单</div>
+                <div class="weui-cell__ft"></div>
+            </a>
+            <a href="条码追踪.html" class="weui-cell weui-cell_access">
+                <div class="weui-cell__hd">
+                    <img  class="hd_icon" src="../assets/images/my_hd_icon_03.png" alt="">
+                </div>
+                <div class="weui-cell__bd">条码追踪</div>
+                <div class="weui-cell__ft"></div>
+            </a>
+            <a href="授权查询.html" class="weui-cell weui-cell_access">
+                <div class="weui-cell__hd">
+                    <img  class="hd_icon" src="../assets/images/my_hd_icon_02.png" alt="">
+                </div>
+                <div class="weui-cell__bd">授权查询</div>
+                <div class="weui-cell__ft"></div>
+            </a>
+            <a href="#" class="weui-cell weui-cell_access">
+                <div class="weui-cell__hd">
+                    <img  class="hd_icon" src="../assets/images/my_hd_icon_01.png" alt="">
+                </div>
+                <div class="weui-cell__bd">渠道树形图</div>
+                <div class="weui-cell__ft"></div>
+            </a>
+        </div>
+
+    </div>
+    @@include('./include/bottom-bar.html',{
+       "item1": "",
+        "item2": "",
+        "item3": "",
+        "item4": "active"
+    })
+</div>
+
+@@include('./include/footer.html')
+<script>
+    
+</script>
+</body>
+</html>

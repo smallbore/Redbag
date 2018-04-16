@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    @@include('./include/header.html')
+    <title> 下级订单明细 </title>
+    <style>
+    .small-sbox .qcard{
+            margin:0 0 10px 0;
+            border-radius:10px 10px 0 0;
+    }  
+    .buy-cells{
+        box-shadow: none;
+    }
+    </style>
+</head>
+<body>
+<div class="page">
+    <div class="page-hd">
+        @@include('./include/page-hd.html', {
+        "title": "下级订单明细",
+        "menu": ""
+        })
+    </div>
+    <div class="page-bd page_my">
+        <!-- 页面内容-->
+        <div class="my_top">
+            <div class="weui-cell" style="padding-top:30px;">
+                <div class="weui-cell__hd">
+                    <div class="avatar">
+                        <img src="../assets/images/tx.jpg" alt="">
+                    </div>
+                </div>
+                <div class="weui-cell__bd">
+                    <div class="wm_title">下级代理：我是一只小木鱼</div>
+                    <div class="wm_title">电话：18688597896</div>
+                    <div class="wm_title">微信：YY20870</div>
+                </div>
+                <div class="weui-cell__ft">
+                    <img src="../assets/images/tell00.png" class="tell_icon" alt="" />
+                </div>
+            </div>
+        </div>
+        <div class="small-sbox">
+
+            <div class="weui-cells qcard border-none">
+                <div class="weui-cell">
+                    <div class="weui-cell__bd">
+                        <div class="s_text">订单编号：8762312312312</div>
+                    </div>
+                    <div class="weui-cell_ft">
+                        <div class="s_text"><span class="text-green">等待确认</span></div>
+                    </div>
+                </div>
+        
+                <div class="weui-cells buy-cells">
+                    <div class="weui-cell flex-start">
+                        <div class="weui-cell__hd" style="position:relative">
+                            <img src="../assets/images/proimg1x1.png" class="hdpro_img min_img" style="margin-right:10px;" alt="" />
+                        </div>
+                        <div class="weui-cell__bd">
+                            <div class="pro_title">
+                                阿迪达斯男女 跑步鞋透气减震跑步鞋2018潮人必备新品跑步鞋透气减震跑步鞋2018潮人必备新品
+                            </div>
+                            <div class="text-muted fs20 pdspan">
+                                <span>规格：【24瓶*1箱】</span>
+                            </div>
+                        </div>
+                        <div class="weui-cell__ft" style="padding-left:10px;">
+                            <div class="bs_title">￥699.00</div>
+                            <div class="s_text">×1</div>
+                        </div>
+                    </div>
+                    <div class="weui-cell flex-start">
+                        <div class="weui-cell__hd" style="position:relative">
+                            <img src="../assets/images/proimg1x1.png" class="hdpro_img min_img" style="margin-right:10px;" alt="" />
+                        </div>
+                        <div class="weui-cell__bd">
+                            <div class="pro_title">
+                                阿迪达斯男女 跑步鞋透气减震跑步鞋2018潮人必备新品跑步鞋透气减震跑步鞋2018潮人必备新品
+                            </div>
+                            <div class="text-muted fs20 pdspan">
+                                <span>规格：【24瓶*1箱】</span>
+                            </div>
+                        </div>
+                        <div class="weui-cell__ft" style="padding-left:10px;">
+                            <div class="bs_title">￥699.00</div>
+                            <div class="s_text">×1</div>
+                        </div>
+                    </div>
+        
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__bd">
+                        
+                    </div>
+                    <div class="weui-cell__ft">
+                        <div class="s_title">共2件商品 合计：
+                            <span class="text-red">￥2580.00</span>元</div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="weui-cells qcard" style="border-radius:0;">
+                <div class="weui-cell pd20">
+                    <div class="weui-cell__bd">
+                        <div class="s_title">收货信息</div>
+                    </div>
+                </div>
+                <div class="weui-cell pd20">
+                    <div class="weui-cell__bd">
+                        <span class="bm_title">李大维</span>
+                        <span class="bm_title">186****7568</span>
+                        <div class="m_text" style="padding-top:5px"><img src="../assets/images/icon_map02.png" class="icon_map02" alt="" />广州市海珠区新港东路畔江花园9B栋2588号</div>
+                    </div>
+                </div>
+            </div>
+            <div class="weui-cells qcard" style="border-radius:0;">
+                <div class="weui-cell pd20">
+                    <div class="weui-cell__bd">
+                        <div class="s_title">支付信息</div>
+                    </div>
+                </div>
+                <div class="weui-cell pd20">
+                    <div class="weui-cell__bd">
+                        <div class="ping_img">
+                            <img src="../assets/images/buy00.jpg" alt="" class="buy_icon" />
+                        </div>
+                        <div class="m_text" style="padding-top:5px">
+                             付款时间：2017/07/21 18:20:38
+                        </div>
+                        <div class="m_text" style="padding-top:5px">
+                            付款凭证：转账.jpg 
+                            <a class="text-green" href="###">点击查看</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    
+    <div class="weui-cell weui-cell_foot">
+        <div class="weui-cell__bd">
+            <a class="weui-btn weui-btn_primary mt20 small-btn_primary" href="###">转给上级</a>
+        </div>
+        <div class="weui-cell__bd">
+            <a class="weui-btn weui-btn_primary mt20" href="###">我要发货</a>
+        </div>
+    </div>
+</div>
+
+@@include('./include/footer.html')
+<script>
+    
+</script>
+</body>
+</html>

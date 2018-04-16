@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    @@include('./include/header.html')
+    <title>我的名片</title>
+</head>
+<body>
+<div class="page">
+    <div class="page-hd">
+        @@include('./include/page-hd.html', {
+        "title": "我的名片",
+        "menu": ""
+        })
+    </div>
+    <div class="page-bd" style="background-color: #fff">
+        <!-- 页面内容-->
+        <div class="tc">
+            <div>
+                <img class="ch_img" src="../assets/images/ch_img_01.png" alt="">
+            </div>
+            <div class="fs32">邀请的代理注册成功后，即加入您的团队</div>
+            <div class="namecard_box">
+                <div class="avatar">
+                    <img src="../assets/images/tx.jpg" alt="">
+                </div>
+                <div class="fs24">我是一只小木鱼</div>
+
+                <div class="rwm_box">
+                    <img src="../assets/images/rwm.png" alt="">
+                </div>
+
+                <div class="fs24 text-gray">
+                    截图保存二维码，发送出去吧
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@@include('./include/footer.html')
+<script>
+
+</script>
+</body>
+</html>

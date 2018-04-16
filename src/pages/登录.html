@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    @@include('./include/header.html')
+    <title> 登录页 </title>
+</head>
+<body>
+<div class="page">
+    <div class="page-hd">
+        @@include('./include/page-hd.html', {
+        "title": "登录页",
+        "menu": ""
+        })
+    </div>
+
+    <div class="page-bd bgwhite">
+        <!-- 页面内容-->
+        <div class="login_img">
+            <img src="../assets/images/logo00.png" />
+        </div>
+        <div class="weui-cells login_cells border-none">
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="用户名"/>
+                </div>
+            </div>
+            <div class="weui-cell border-none">
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="密码"/>
+                </div>
+            </div>
+            <div class="weui-cell border-none pass_cell">
+                <div class="weui-cell__bd"></div>
+                <div class="weui-cell__ft">
+                    <a class="m_text" href="忘记密码.html">忘记密码？</a>
+                </div>
+            </div>
+            <div class="weui-cell border-none">
+                <div class="weui-cell__bd">
+                    <a class="weui-btn weui-btn_primary mt20" href="###">确认申请</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <a class="bottom_text" href="注册代理商.html">我要加盟代理商</a>
+</div>
+
+@@include('./include/footer.html')
+<script>
+    
+</script>
+</body>
+</html>

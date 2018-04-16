@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    @@include('./include/header.html')
+    <title> 个人中心 </title>
+</head>
+<body>
+<div class="page">
+    <div class="page-hd">
+        @@include('./include/page-hd.html', {
+        "title": "个人中心",
+        "menu": ""
+        })
+    </div>
+    <div class="page-bd page_my">
+        <!-- 页面内容-->
+        <div class="my_top">
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <div class="avatar">
+                        <img src="../assets/images/tx.jpg" alt="">
+                    </div>
+                </div>
+                <div class="weui-cell__bd">
+                    <h3>我是一只小木鱼</h3>
+                    <p><img class="icon_zvip" src="../assets/images/icon_zvip.png" alt=""><span>联合创始人</span></p>
+                </div>
+                <div class="weui-cell__ft">
+                    <a href="个人中心-修改密码.html" class="btn_xius">修改密码</a>
+                </div>
+            </div>
+        </div>
+        <div class="weui-cells qcard">
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <div class="weui-label">代理商名称</div>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="请输入代理商名称" />
+                </div>
+            </div>
+            <div class="weui-cell weui-cell_access">
+                <div class="weui-cell__hd">
+                    <div class="weui-label">性别</div>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="请选择性别" id="picker_sex" />
+                </div>
+                <div class="weui-cell__ft"></div>
+            </div>
+            <div class="weui-cell weui-cell_access">
+                <div class="weui-cell__hd">
+                    <div class="weui-label">生日</div>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="请选择出生日期" id="time-format" />
+                </div>
+                <div class="weui-cell__ft"></div>
+            </div>
+            <div class="weui-cell weui-cell_access">
+                <div class="weui-cell__hd">
+                    <div class="weui-label">地址</div>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="请选择收货地址" id='city-picker' value="" />
+                </div>
+                <div class="weui-cell__ft"></div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <div class="weui-label">手机</div>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="请填写手机号码" />
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <div class="weui-label">邮箱</div>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="请填写邮箱地址" />
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="weui-cell">
+            <div class="weui-cell__bd pd14">
+                <a class="weui-btn weui-btn_primary mt20 small-btn_primary" href="###">取消</a>
+            </div>
+            <div class="weui-cell__bd pd14">
+                <a class="weui-btn weui-btn_primary mt20" href="###">确定</a>
+            </div>
+        </div>
+    </div>
+    @@include('./include/bottom-bar.html',{
+       "item1": "",
+        "item2": "",
+        "item3": "",
+        "item4": "active"
+    })
+</div>
+
+@@include('./include/footer.html')
+<script>
+    $("#picker_sex").picker({
+        title: "请选择您的性别",
+        cols: [
+            {
+                textAlign: 'center',
+                values: ['男', '女', '保密']
+            }
+        ],
+        // 关闭时触发
+        onClose: function (p, v, d) {
+            console.log(p.displayValue);
+        }
+    });
+    $("#time-format").datetimePicker({
+        title: '请选择日期',
+        yearSplit: '-',
+        monthSplit: '-',
+        times: function () {
+            return [  // 自定义的时间   
+            ];
+        },
+        // 改变是触发
+        onChange: function (picker, values, displayValues) {
+            console.log(values);
+        },
+        // 关闭时触发
+        onClose: function (p, v, d){
+            console.log(p.displayValue);
+        }
+    });
+    $("#city-picker").cityPicker({
+        title: "请选择收货地址",
+        // 关闭时触发
+        onClose: function (p, v, d) {
+            console.log(p.displayValue);
+        }
+    });
+</script>
+</body>
+</html>

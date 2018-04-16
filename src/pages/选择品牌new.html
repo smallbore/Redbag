@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    @@include('./include/header.html')
+    <title>选择品牌</title>
+</head>
+<body>
+<div class="page">
+    <div class="page-hd">
+        @@include('./include/page-hd.html', {
+        "title": "选择品牌",
+        "menu": ""
+        })
+    </div>
+    <div class="page-bd" style="background-image:url(../assets/images/pro_bg.jpg);background-size:100% 100%;">
+        <!-- 页面内容-->
+        <div class="bscroll-box">
+
+            <div class="weui-grids pro-grids">
+                <div class="grid_two">
+                    <div class="grid_box">
+                        <div class="grid_img">
+                            <img src="../assets/images/pro1x1.png" />
+                        </div>
+                        <div class="grid_title">Yashili </div>
+                        <div class="grid_tip">代理商：
+                            <span class="text-red">1080</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid_two">
+                    <div class="grid_box">
+                        <div class="grid_img">
+                            <img src="../assets/images/pro1x1.png" />
+                        </div>
+                        <div class="grid_title">Yashili 雅士利雅士利雅士利</div>
+                        <div class="grid_tip">代理商：
+                            <span class="text-red">1080</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid_two">
+                    <div class="grid_box">
+                        <div class="grid_img">
+                            <img src="../assets/images/pro1x1.png" />
+                        </div>
+                        <div class="grid_title">Yashili 雅士利</div>
+                        <div class="grid_tip">代理商：
+                            <span class="text-red">1080</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid_two">
+                    <div class="grid_box">
+                        <div class="grid_img">
+                            <img src="../assets/images/pro1x1.png" />
+                        </div>
+                        <div class="grid_title">Yashili 雅士利</div>
+                        <div class="grid_tip">代理商：
+                            <span class="text-red">1080</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid_two">
+                    <div class="grid_box">
+                        <div class="grid_img">
+                            <img src="../assets/images/pro1x1.png" />
+                        </div>
+                        <div class="grid_title">Yashili 雅士利</div>
+                        <div class="grid_tip">代理商：
+                            <span class="text-red">1080</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid_two">
+                    <div class="grid_box">
+                        <div class="grid_img">
+                            <img src="../assets/images/pro1x1.png" />
+                        </div>
+                        <div class="grid_title">Yashili 雅士利</div>
+                        <div class="grid_tip">代理商：
+                            <span class="text-red">1080</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid_two">
+                    <div class="grid_box">
+                        <div class="grid_img">
+                            <img src="../assets/images/pro1x1.png" />
+                        </div>
+                        <div class="grid_title">Yashili 雅士利</div>
+                        <div class="grid_tip">代理商：
+                            <span class="text-red">1080</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@@include('./include/footer.html')
+
+<script src="../assets/js/bscroll.min.js"></script>
+<script>
+    // js 滚动
+    var searchbox = document.querySelector('.page-bd');
+    var searchBox = new BScroll(searchbox, {
+        click: true,
+        probeType: 2,
+        pullUpLoad: {
+            threshold: -40 // 在上拉到超过底部 40px 时，触发 pullingUp 事件
+        },
+    });
+</script>
+</body>
+</html>

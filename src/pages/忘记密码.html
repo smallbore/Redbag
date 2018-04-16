@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    @@include('./include/header.html')
+    <title> 忘记密码 </title>
+</head>
+<body>
+<div class="page">
+    <div class="page-hd">
+        @@include('./include/page-hd.html', {
+        "title": "忘记密码",
+        "menu": ""
+        })
+    </div>
+
+    <div class="page-bd bgwhite">
+        <!-- 页面内容-->
+        <div class="login_img">
+            <img src="../assets/images/logo00.png" />
+        </div>
+        <div class="weui-cells login_cells border-none">
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="用户名"/>
+                </div>
+            </div>
+            <div class="weui-cell border-none">
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="手机号码"/>
+                </div>
+            </div>
+            <div class="weui-cell border-none">
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="验证码" />
+                </div>
+                <div class="weui-cell__bd input-btn">
+                    <span class="span_yan">短信验证</span>
+                </div>
+            </div>
+            <div class="weui-cell border-none">
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="新密码" />
+                </div>
+            </div>
+            <div class="weui-cell border-none">
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="确认新密码" />
+                </div>
+            </div>
+            
+
+            <div class="weui-cell border-none">
+                <div class="weui-cell__bd">
+                    <a class="weui-btn weui-btn_primary mt20" href="###">登录</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@@include('./include/footer.html')
+<script>
+    
+</script>
+</body>
+</html>
