@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    @@include('./include/header.html')
+    <title>提现</title>
+
+</head>
+<body>
+<div class="page">
+    <div class="page-hd">
+         @@include('./include/page-hd.html', { "title": "提现", "menu": "提现记录" })
+    </div>
+    <div class="page-bd">
+        <!-- 页面内容-->
+        <div class="weui-cells">
+            <div class="weui-cell pd20">
+                <div class="weui-cell__bd">
+                    <span class="m_title">提现红包股数</span>
+                </div>
+            </div>
+            <div class="weui-cell border-none input_cell">
+                <!-- <div class="weui-cell__hd">￥</div> -->
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="number" value="56236" />
+                </div>
+                <div class="weui-cell__ft">
+                    <span class="x_title">=256.69元</span>
+                </div>
+            </div>
+            <div class="weui-cell pd20">
+                <div class="weui-cell__bd">
+                    <span class="x_text">我的红包股数: 0.8652</span>
+                </div>
+                <div class="weui-cell__ft x_text">
+                    <span class="text-red">全部提现</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="weui-cell">
+            <div class="weui-cell__bd pd20">
+                <a href="javascript:;" class="weui-btn weui-btn_primary">确认提现</a>
+                <div class="end_text">
+                    <span class="m_text">提现总估价不得低于1元，24小时内到账</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@@include('./include/footer.html')
+
+<script>
+    
+</script>
+</body>
+</html>
