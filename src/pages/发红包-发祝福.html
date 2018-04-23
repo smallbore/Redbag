@@ -47,7 +47,7 @@
                             <div class="look_icon">
                                 <img src="../assets/images/search01.png" alt="" />
                             </div>
-                            <div class="weui-flex__item">
+                            <div class="weui-flex__item show_bag">
                                 <span class="m_text">预览效果</span>
                             </div>
                         </div>
@@ -63,7 +63,7 @@
                                </div>
                                 <div class="m_title">元</div>
                            </div>
-                           <div class="input_tip">
+                           <div class="input_tip ">
                                <div class="m_text">附近的人可随机领取该红包</div>
                            </div>
 
@@ -202,10 +202,38 @@
     </div>
 </div>
 
+<!-- 预览效果 -->
+<div id="bagdefault" class="weui-popup__container popup-bottom popup-center">
+    <div class="weui-popup__overlay"></div>
+    <div class="weui-popup__modal pass_modal" style="background:transparent;overflow:initial;">
+        <div class="bagdf_box">
+            <div class="default_img">
+                <img src="../assets/images/bag_defualt.jpg" alt="" />
+            </div>
+            <div class="bag_textbox">
+                <div class="wx_title">给你个免费的红包!</div>
+                <div class="weui-top_img">
+                    <img src="../assets/images/tx00.jpg" alt="" />
+                </div>
+                <div class="name_tip">收到 ~小情调~ 的祝福红包</div>
+                <div class="money_get">0.3611
+                    <span>元</span>
+                </div>
+            </div>
+           
+        </div>
+        <div class="weui-cell border-none pos_bottom">
+            <div class="weui-cell__bd pd20 close-popup">
+                <a href="javascript:;" class="weui-btn weui-btn_primary">关闭</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 @@include('./include/footer.html')
 <script src="../assets/js/bscroll.min.js"></script>
 <script>
-
+    // 地区选择
     $("#picker").on("click",function(){
         $("input").blur()
     })
@@ -222,9 +250,9 @@
         }
     });
 
-    // 规则
-    $(".guizhi_btn").on("click",function(){
-        console.log(111)
+    // 预览效果
+    $(".show_bag").on("click", function () {
+         $("#bagdefault").popup();
     })
 
     // 红包加密 
