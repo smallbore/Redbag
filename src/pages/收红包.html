@@ -4,7 +4,7 @@
     @@include('./include/header.html')
     <title>收红包</title>
     <style>
-        .amap-icon img{width: 100%;}
+        .amap-icon img{width: 100%;height:100%;}
 
         /* 地图 */
 .info-title{
@@ -69,22 +69,57 @@
 <body>
 <div class="page">
     <div class="page-hd">
-         @@include('./include/page-hd.html', { "title": "收红包", "menu": "" })
+        <div class="header">
+            <div class="header-left">
+                <a href="javascript:;" class="xie_icon" style="padding-left:8px">
+                    <img src="../assets/images/map_icon00.png" alt="" />
+                </a>
+            </div>
+            <div class="header-title">收红包26655266555</div>
+            <div class="header-right">
+                <a href="javascript:;" class="xie_icon">
+                    <img src="../assets/images/map_icon.png" alt="" />
+                </a>
+            </div>
+        </div>
     </div>
     <div class="page-bd">
         <!-- 页面内容-->
         <div id="container" style="height:100%"></div>
-        
+        <div class="map_addbtn">
+            <div class="flex_add">
+                <img src="../assets/images/map_btn.png">
+                <p>发红包</p>
+            </div>
+        </div>
+        <div class="weui-flex map_addbox">
+            <div class="map_icon">
+                <img src="../assets/images/map_add.png" alt="" />
+            </div>
+            <div class="weuo-flex__item">
+                <div class="m_text">1000米</div>
+                <div class="m_text">扩张收红包范围</div>
+            </div>
+        </div>
+        <div class="weui-flex map_banner">
+            <div class="map_icon">
+                <img src="../assets/images/map_add.png" alt="" />
+            </div>
+            <div class="weuo-flex__item">
+                <div class="m_text">下一个广告红包</div>
+                <div class="x_title">00:05:09</div>
+            </div>
+        </div>
     </div>
     <div class="bottom-tabbar">
-        <a href="我要订货.html" class="bottom-tabbar__item active">
+        <a href="收红包.html" class="bottom-tabbar__item active">
             <span class="icon">
                 <img src="../assets/images/bottom_icon01.png" />
                 <img class="lhimg" src="../assets/images/bottom_icon01_lh.png" />
             </span>
             <p class="label">收红包</p>
         </a>
-        <a href="商品发货.html" class="bottom-tabbar__item ">
+        <a href="钱包.html" class="bottom-tabbar__item ">
             <span class="icon">
                 <img src="../assets/images/bottom_icon02.png" />
                 <img class="lhimg" src="../assets/images/bottom_icon02_lh.png" />
@@ -107,12 +142,12 @@
     }, {
         "name": "dddd",
         "center": "113.389234,23.126589",
-        "type": 1,
+        "type": 2,
         "subDistricts": []
     }, {
         "name": "cccc",
         "center": "113.388279,23.127107",
-        "type": 1,
+        "type": 3,
         "subDistricts": []
     }, {
         "name": "dddd",
@@ -122,23 +157,23 @@
     }, {
         "name": "广东省",
         "center": "113.280637,23.125178",
-        "type": 1,
+        "type": 2,
         "subDistricts": []
     }, {
         "name": "澳門特別行政區",
         "center": "113.54909,22.198951",
-        "type": 1,
+        "type": 3,
         "subDistricts": []
     }];
-    var map = new AMap.Map('container', { resizeEnable: true, zoom: 4 });
+    var map = new AMap.Map('container', { resizeEnable: true, zoom: 8 });
     var markers = [];
     //province见Demo引用的JS文件
     for (var i = 0; i < provinces.length; i += 1) {
         var marker;
         if (provinces[i].type === 1) {
             var icon = new AMap.Icon({
-                image: '../assets/images/sbcx_icon_mark.png',
-                size: new AMap.Size(25, 30)
+                image: '../assets/images/map_bag01.png',
+                size: new AMap.Size(28, 38)
             });
             marker = new AMap.Marker({
                 icon: icon,
@@ -149,15 +184,60 @@
                 map: map
             });
 
-            marker.content = '<div class="info-content">' +
-                '<img src="images/tx2.jpg" class="info_img" />' +
-                '<div class="info_rbox"><span class="info_title">广州天河北充电桩</span><br/>' +
-                '<span class="info_text">直流单枪桩</span><span class="btn_tips">低频</span><br/>' +
-                '<img src="images/icon00.png" class="info_icon" /><span class="info_tip">青岛特来能源有限公司</span><br/>' +
-                '<span class="info_tip">NO. 桩运营编码：TLD-asd-01</span><br/></div>';
+            // marker.content = '<div class="info-content"> \
+            //     <img src="images/tx2.jpg" class="info_img" /> \
+            //     <div class="info_rbox"><span class="info_title">广州天河北充电桩</span><br/> \
+            //     <span class="info_text">直流单枪桩</span><span class="btn_tips">低频</span><br/> \
+            //     <img src="images/icon00.png" class="info_icon" /><span class="info_tip">青岛特来能源有限公司</span><br/> \
+            //     <span class="info_tip">NO. 桩运营编码：TLD-asd-01</span><br/></div> ';
+            //给Marker绑定单击事件
+            marker.on('click', markerClick);
+        }else if (provinces[i].type === 2) {
+            var icon = new AMap.Icon({
+                image: '../assets/images/map_bag02.png',
+                size: new AMap.Size(28, 38)
+            });
+            marker = new AMap.Marker({
+                icon: icon,
+                position: provinces[i].center.split(','),
+                offset: new AMap.Pixel(-12, -12),
+                zIndex: 101,
+                title: provinces[i].name,
+                map: map
+            });
+
+            // marker.content = '<div class="info-content"> \
+            //     <img src="images/tx2.jpg" class="info_img" /> \
+            //     <div class="info_rbox"><span class="info_title">广州天河北充电桩</span><br/> \
+            //     <span class="info_text">直流单枪桩</span><span class="btn_tips">低频</span><br/> \
+            //     <img src="images/icon00.png" class="info_icon" /><span class="info_tip">青岛特来能源有限公司</span><br/> \
+            //     <span class="info_tip">NO. 桩运营编码：TLD-asd-01</span><br/></div> ';
+            //给Marker绑定单击事件
+            marker.on('click', markerClick);
+        }else if (provinces[i].type === 3) {
+            var icon = new AMap.Icon({
+                image: '../assets/images/map_bag03.png',
+                size: new AMap.Size(28, 38)
+            });
+            marker = new AMap.Marker({
+                icon: icon,
+                position: provinces[i].center.split(','),
+                offset: new AMap.Pixel(-12, -12),
+                zIndex: 101,
+                title: provinces[i].name,
+                map: map
+            });
+
+            // marker.content = '<div class="info-content"> \
+            //     <img src="images/tx2.jpg" class="info_img" /> \
+            //     <div class="info_rbox"><span class="info_title">广州天河北充电桩</span><br/> \
+            //     <span class="info_text">直流单枪桩</span><span class="btn_tips">低频</span><br/> \
+            //     <img src="images/icon00.png" class="info_icon" /><span class="info_tip">青岛特来能源有限公司</span><br/> \
+            //     <span class="info_tip">NO. 桩运营编码：TLD-asd-01</span><br/></div> ';
             //给Marker绑定单击事件
             marker.on('click', markerClick);
         }
+
         markers.push(marker);
     }
     map.setFitView();
@@ -176,7 +256,7 @@
             maximumAge: 0,           //定位结果缓存0毫秒，默认：0
             convert: true,           //自动偏移坐标，偏移后的坐标为高德坐标，默认：true
             showButton: true,        //显示定位按钮，默认：true
-            buttonPosition: 'LB',    //定位按钮停靠位置，默认：'LB'，左下角
+            buttonPosition: 'RB',    //定位按钮停靠位置，默认：'LB'，左下角
             buttonOffset: new AMap.Pixel(10, 80),//定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
             showMarker: true,        //定位成功后在定位到的位置显示点标记，默认：true
             showCircle: true,        //定位成功后用圆圈表示定位精度范围，默认：true
@@ -188,6 +268,28 @@
         AMap.event.addListener(geolocation, 'complete', onComplete);//返回定位信息
         AMap.event.addListener(geolocation, 'error', onError);      //返回定位出错信息
     });
+    // 获取地位坐标
+    function onComplete(data) {
+        var str = ['定位成功'];
+  
+        var GetLng = data.position.getLng();
+        var GetLat = data.position.getLat()
+        navCircle(GetLng, GetLat)
+    }
+    // 圆
+    function navCircle(o,x){
+        var circle = new AMap.Circle({
+            center: new AMap.LngLat(o, x),// 圆心位置
+            radius: 200, //半径
+            strokeColor: "#F33", //线颜色
+            strokeOpacity: 0.35, //线透明度
+            strokeWeight: 1, //线粗细度
+            fillColor: "#fee4e4", //填充颜色
+            fillOpacity: 0.45//填充透明度
+        });
+        circle.setMap(map);
+    }
+    
 </script>
 </body>
 </html>
