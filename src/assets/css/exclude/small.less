@@ -835,3 +835,148 @@
         }
     }
 }
+
+.red_bag{
+    background:url(../images/map_bagbg.png) no-repeat;
+    background-size:100% 100%;
+    width:100%;
+    height:720px;
+}
+.red_text-box{
+    padding-top:80px;
+}
+
+.open_btn{
+    margin-top:60px;
+    img{
+        width:190px;
+        height:190px;
+    }
+    &.amove{
+        animation: rotateimg 2s linear infinite ;
+    }
+}
+.bottom_icon{
+    position: absolute;
+    bottom:20px;
+    left:0;
+    right:0;
+    width:36px;
+    height:36px;
+    margin:0 auto;
+    background:url(../images/map_bagbottom.png) no-repeat;
+    background-size:100% 100%;
+}
+
+.red_bag-close{
+    position: absolute;
+    right:10px;
+    top:10px;
+    width:70px;
+    height:70px;
+}
+
+@keyframes rotateimg{
+    0%{
+        transform: rotateY(0deg);
+    }
+    50%{
+        transform: rotateY(180deg);
+    }
+    100%{
+        transform: rotateY(0deg);
+    }
+}
+
+.red_bag-pass{
+    height:660px;
+    background:url(../images/map_bagbg2.png) no-repeat;
+    background-size:100% 100%;
+    .red_text-box{
+        padding-top:10px;
+    }
+    .input_flexbox{
+        padding:20px 50px 10px;
+        .passinput{
+            background-color: #ef4231;
+            color:#ffe7bc;
+        }
+    }
+}
+.red_bag-pass .passinput.blink::after{
+    animation: oblink 1s infinite steps(1, start);
+}
+/*这里设置动画blink*/
+@keyframes oblink {
+    0%, 100% {
+        background-color: #ffe7bc;
+    }
+    50% {
+        background-color: #ef4231; /* not #aaa because it's seem there is Google Chrome bug */ 
+    }
+}
+
+.map_bagwen{
+    width:30px;
+    height:30px;
+    margin-left:0px;
+    vertical-align: middle;
+}
+.bottom_tip{
+    position: absolute;
+    bottom:20px;
+    left:0;
+    width:100%;
+}
+.out_time{
+    display:inline-block;
+    padding:4px 30px;
+    color:#ffe7bc;
+    border:1px solid #ffe7bc;
+    border-radius:30px;
+    font-size:30px;
+    margin:10px auto;
+}
+
+.money-cells{
+    margin-top:0;
+    background-image:url(../images/top_bg01.jpg);
+    background-repeat:no-repeat;
+    background-position: left bottom;
+    background-size:100%;
+    padding:10px 0 80px;
+    box-shadow: 4px 6px 10px 0px rgba(255, 65, 58, 0.5);
+    .wx_bagnum{
+        font-size: 72px;
+        color: #ffffff;
+        font-weight:600;
+        padding:10px 0;
+    }
+    .weui-cell__ft{
+        &::after{
+            border-color:#fff;
+        }
+    }
+}
+.today-flex{
+    background:#fff;
+    box-shadow: 0px 10px 8px 0px rgba(0, 0, 0, 0.05);
+    margin:-60px 65px 0;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    border-radius: 50px;
+    padding:10px 0;
+    .weui-flex__item{
+        position: relative;
+    }
+    .weui-flex__item:first-child::after{
+        position: absolute;
+        right:0;
+        top:50%;
+        transform:translateY(-50%);
+        height:60%;
+        border-right:1px solid #eee;
+        content:"";
+    }
+}

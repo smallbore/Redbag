@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    @@include('./include/header.html')
+    <title>钱包</title>
+    <style>
+        .weui-cell_access:active{background:initial;}
+    </style>
+</head>
+<body>
+<div class="page">
+    <div class="page-hd">
+        <div class="header">
+            <div class="header-left">
+                <a href="javascript:history.go(-1)" class="left-arrow"></a>
+            </div>
+            <div class="header-title">钱包</div>
+            <div class="header-right">
+                <a href="javascript:;" class="xie_icon">
+                    <img src="../assets/images/amore1.png" style="padding-top:8px;" alt="" />
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="page-bd">
+        <!-- 页面内容-->
+        <div class="weui-cells money-cells">
+            <div class="weui-cell weui-cell_access">
+                <div class="weui-cell__bd">
+                    <div class="wxm_title">我的红包股价值</div>
+                    <div class="wx_bagnum">24,513.2358</div>
+                    <div class="ws_title">我的红包股价值 = 今日红包股价 X 我的红包股数</div>
+                </div>
+                <a class="weui-cell__ft" href="提现.html">
+                    <div class="wxm_title">提现</div>
+                </a>
+            </div>
+        </div>
+        <div class="weui-flex today-flex">
+            <div class="weui-flex__item">
+                <div class="bx_title">0.32121765</div>
+                <div class="m_text">今日红包股价</div>
+            </div>
+            <div class="weui-flex__item">
+                <div class="bx_title">0.58964</div>
+                <div class="m_text">我的红包股数</div>
+            </div>
+        </div>
+        <div class="weui-cells">
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <div id="main" style="width: 100%;height:200px;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="weui-cells">
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <div class="hd_icon"></div>
+                </div>
+                <div class="weui-cell__bd">
+                    <div class="x_title">红包股问答</div>
+                </div>
+            </div>
+            <div class="weui-cell border-left_0" style="padding:0;">
+                <div class="weui-cell__bd">
+                    <div class="weui-cell">
+                        <div class="weui-cell__bd">
+                            <div class="m_title">Q1. 如何获取红包股？！</div>
+                            <div class="m_text">领取红包会直接增加你的红包股数。</div>
+                        </div>
+                    </div>
+                    <div class="weui-cell">
+                        <div class="weui-cell__bd">
+                            <div class="m_title">Q2. 红包股价如何增长？</div>
+                            <div class="m_text">红包每开启一个红包，红包金额10%将会均分给平台的所有红包股 平台开启红包数越多红包股价增长越快。</div>
+                        </div>
+                    </div>
+                    <div class="weui-cell">
+                        <div class="weui-cell__bd">
+                            <div class="m_title">Q3. 红包股的规则</div>
+                            <div class="m_text">连续超过30天未登陆千米红包，则之后的每10天，你的红包股数 将减少10%。</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="bottom-tabbar">
+        <a href="收红包.html" class="bottom-tabbar__item ">
+            <span class="icon">
+                <img src="../assets/images/bottom_icon01.png" />
+                <img class="lhimg" src="../assets/images/bottom_icon01_lh.png" />
+            </span>
+            <p class="label">收红包</p>
+        </a>
+        <a href="钱包.html" class="bottom-tabbar__item active">
+            <span class="icon">
+                <img src="../assets/images/bottom_icon02.png" />
+                <img class="lhimg" src="../assets/images/bottom_icon02_lh.png" />
+            </span>
+            <p class="label">钱包</p>
+        </a>
+    </div>
+</div>
+
+
+
+@@include('./include/footer.html')
+<!--图表-->
+<script src="../assets/js/echarts.min.js"></script>
+<script>
+//初始化图表1
+var data = [2, 6, 7, 5, 6, 8, 9, 4];
+var dates = ["08/26", "08/27", "08/28", "08/29", "08/30", "08/31", "09/01", "09/02"];
+chartOne();
+//图表1
+function chartOne(){
+	var myChart = echarts.init(document.getElementById('main'));
+	console.log(data);
+	
+	var symbolSize = 14;
+	option = {
+		title: {
+			show: "false"
+		},
+		tooltip: {
+			axisPointer : {              
+		        type : 'shadow'          
+		    },  
+			triggerOn: 'onmousemove',
+			formatter: function(params) {
+				return '月份: ' + params.name + '<br>单量: ' + params.value;
+			}
+		},
+		grid: {
+			y: 10,
+			left: '3%',
+			right: '10%',
+			bottom: '8%',
+			containLabel: true
+		},
+		xAxis: {
+			boundaryGap: false,
+			data: dates,
+			type: "category",
+			axisLine: {
+				onZero: false
+			},
+			axisLabel: {
+				interval: 0,
+				rotate: 0
+			}
+		},
+		yAxis: {
+			min: 0,
+			max: 10,
+			type: 'value',
+			axisLine: {
+				onZero: false
+			}
+		},
+		series: [{
+			type: 'line',
+			smooth: true,
+			symbolSize: symbolSize,
+			color: ['#ff3520'],
+			data: data,
+		}]
+	};
+	myChart.clear();
+	// 使用刚指定的配置项和数据显示图表。
+	myChart.setOption(option);
+}
+</script>
+
+</body>
+</html>
