@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+<link rel="stylesheet" href="../assets/css/zpui.css"/>
+<link rel="stylesheet" href="../assets/css/all.css"/>
+<script src="../assets/js/page.js"></script>
+
+    <title>红包动态</title>
+
+</head>
+<body>
+<div class="page">
+    <div class="page-hd">
+         <div class="header">
+    <div class="header-left">
+        <a href="javascript:history.go(-1)" class="left-arrow"></a>
+    </div>
+    <div class="header-title">红包动态</div>
+    <div class="header-right">
+        <a href="javascript:;"></a>
+    </div>
+</div>
+    </div>
+    <div class="page-bd" style="height: 100%;overflow:hidden">
+        <!-- 页面内容-->
+        <div class="bscroll">
+            <div class="weui-top" style="background-image:url(../assets/images/top_bg02.jpg);">
+                <div class="weui-flex tap_flex">
+                    <a class="weui-flex__item" href="红包动态-我收到的红包.html">
+                        收到的红包
+                    </a>
+                    <a class="weui-flex__item active" href="红包动态-我发出的红包.html">
+                        我发的红包
+                    </a>
+                </div>
+                <div class="my-data_box">
+                    <div class="my-data_img">
+                        <img src="../assets/images/tx00.jpg" alt="" />
+                    </div>
+                    <div class="weui-top_name">
+                        <div class="x_title">~小情调天使~</div>
+                        <div class="s_title">发出</div>
+                    </div>
+                    <div class="weui-flex my-data_flex">
+                        <div class="weui-flex__item">
+                            <div class="my-data_num">4603.306</div>
+                            <div class="m_text">红包总金额 (元)</div>
+                        </div>
+                        <div class="weui-flex__item">
+                            <div class="my-data_num">251112</div>
+                            <div class="m_text">累计影响 (人)</div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="weui-cells mt0">
+                <div class="weui-cell border-left_0" style="padding:0;">
+                    <div class="weui-cell__bd">
+                        <div class="weui-cell flex-start">
+                            <div class="weui-cell__img">
+                                <img src="../assets/images/tx00.jpg" class="list_icon" alt="" />
+                            </div>
+                            <div class="weui-cell__bd">
+                                <div class="liu_name">薰衣草</div>
+                                <div class="m_title">谢谢你的红包，非常感谢你！</div>
+                                <div class="max_image min_image">
+                                    <img src="../assets/images/images.png" />
+                                </div>
+                                <div class="weui-flex">
+                                    <div class="weui-flex__item">
+                                        <div class="m_text">1天前</div>
+                                    </div>
+                                    <div class="weui-flex__right">
+                                        <a href="javascript:;" class="read-box">
+                                            <img src="../assets/images/read_icon.png" alt="" />
+                                            <span class="m_text">189</span>
+                                        </a>
+                                        <a href="javascript:;" class="read-box">
+                                            <img src="../assets/images/read_icon2.png" alt="" />
+                                            <span class="m_text">5896</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="weui-cell flex-start">
+                            <div class="weui-cell__img">
+                                <img src="../assets/images/tx00.jpg" class="list_icon" alt="" />
+                            </div>
+                            <div class="weui-cell__bd">
+                                <div class="liu_name">薰衣草2</div>
+                                <div class="m_title">谢谢你的红包，非常感谢你！</div>
+                                <div class="max_image min_image">
+                                    <img src="../assets/images/images.png" />
+                                </div>
+                                <div class="weui-flex">
+                                    <div class="weui-flex__item">
+                                        <div class="m_text">1天前</div>
+                                    </div>
+                                    <div class="weui-flex__right">
+                                        <a href="javascript:;" class="read-box">
+                                            <img src="../assets/images/read_icon.png" alt="" />
+                                            <span class="m_text">189</span>
+                                        </a>
+                                        <a href="javascript:;" class="read-box">
+                                            <img src="../assets/images/read_icon2.png" alt="" />
+                                            <span class="m_text">5896</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="../assets/js/lib/jquery-2.1.4.js"></script>
+<script src="../assets/js/jquery-weui.min.js"></script>
+<script src="../assets/js/bscroll.min.js"></script>
+<script>
+    var pagebox = document.querySelector('.page-bd');
+    var pageBox = new BScroll(pagebox, {
+        click: true,
+        probeType: 2,
+        pullUpLoad: {
+            threshold: -40 // 在上拉到超过底部 40px 时，触发 pullingUp 事件
+        },
+    });
+
+    // pageBox.finishPullUp() //数据完成
+    // pageBox.refresh();  //重新计算高度
+</script>
+</body>
+</html>
