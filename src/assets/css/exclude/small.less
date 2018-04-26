@@ -980,3 +980,91 @@
         content:"";
     }
 }
+
+/* 4/25 */
+.small_header{
+    height:100px;
+    .header-right{
+        text-align: left;
+        padding:0;
+        padding-left:30px;
+    }
+    .header-title{
+        padding:10px 30px;
+        background:#f1f1f1;
+        border-radius:50px;
+    }
+}
+
+.top_xuan{
+    text-align: center;
+    padding:20px 30px;
+}
+.xuanz_btn{
+    background-color: #eeeeee;
+    border-radius: 29px;
+    color: #6a6a6a;
+    font-size: 28px;
+    display:inline-block;
+    width: 140px;
+    height: 58px;
+    line-height: 58px;
+    &.checked{
+        background:#ff7162;
+        color:#fff;
+    }
+}
+.amap-icon img{width: 100%;height:100%;}
+.amap-logo,.amap-copyright{display:none !important;}
+
+.small_footer{
+    height:550px;
+    overflow: auto;
+    background:#fff;
+    -webkit-overflow-scrolling: touch;
+}
+.more_icon{
+    display:inline-block;
+    width:50px;
+    height:50px;
+    margin-top:8px;
+    img{
+        display:block;
+        width:50px;
+        height:50px;
+    }
+}
+.header-right{
+    position: relative;
+}
+.right_menu{
+    display:none;
+    position: absolute;
+    z-index: 2;
+    right:30px; 
+    top:100px;
+    width: 227px;
+    // height: 395px;
+	background-color: #fff;
+    border-radius: 10px;
+    &::before{
+        position: absolute;
+        content:"";
+        top:-18px;/*no*/
+        right:10px;
+        border:10px solid #fff; /*no*/
+        border-color:transparent transparent #fff transparent;
+    }
+    .x_title{
+        text-align: center;
+        padding:20px 0;
+        &:not(:first-child){
+            border-top:1px solid #eee;
+        }
+    }
+}
+.weui-actionsheet__cell{
+    padding:20px 0;
+}
+
+/* 4/25 */

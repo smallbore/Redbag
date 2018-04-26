@@ -72,15 +72,15 @@
                                 <div class="m_text">最多可让附近的人领取的红包数</div>
                             </div>
 
-                            <div class="weui-flex flex-center open-flex weui-cell_access">
+                            <a class="weui-flex flex-center open-flex weui-cell_access" href="位置范围.html">
                                 <div class="weui-flex__item">
                                     <div class="x_title">位置/范围</div>
                                 </div>
                                 <div class="weui-flex__inp">
-                                    <input class="weui-input" type="text" placeholder="" value="全市" id='picker' />
+                                    <input class="weui-input" type="text" placeholder="" value="全市" />
                                 </div>
                                 <div class="weui-cell__ft"></div>
-                            </div>
+                            </a>
                             <div class="input_tip">
                                 <div class="m_text">天河区</div>
                             </div>
@@ -197,21 +197,21 @@
 <script src="../assets/js/bscroll.min.js"></script>
 <script>
 
-    $("#picker").on("click", function () {
-            $("input").blur()
-        })
-        $("#picker").picker({
-            title: "请选择您的地区",
-            cols: [
-                {
-                    textAlign: 'center',
-                    values: ['天河区', '天河区', '天河区', '天河区', '天河区', '天河区', '天河区', '天河区', '天河区', '天河区',]
-                }
-            ],
-            onChange: function (p, v, d) {
-                console.log(v)
-            }
-        });
+    // $("#picker").on("click", function () {
+    //     $("input").blur()
+    // })
+    // $("#picker").picker({
+    //     title: "请选择您的地区",
+    //     cols: [
+    //         {
+    //             textAlign: 'center',
+    //             values: ['天河区', '天河区', '天河区', '天河区', '天河区', '天河区', '天河区', '天河区', '天河区', '天河区',]
+    //         }
+    //     ],
+    //     onChange: function (p, v, d) {
+    //         console.log(v)
+    //     }
+    // });
 
         // 规则
         $(".guizhi_btn").on("click", function () {

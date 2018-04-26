@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+<link rel="stylesheet" href="../assets/css/zpui.css"/>
+<link rel="stylesheet" href="../assets/css/all.css"/>
+<script src="../assets/js/page.js"></script>
+
+    <title>位置范围</title>
+
+</head>
+<body>
+<div class="page">
+    <div class="page-hd">
+        <div class="header small_header">
+            <div class="header-left">
+                <a href="javascript:history.go(-1)" class="left-arrow"></a>
+            </div>
+            <div class="header-title">
+                <input class="weui-input" type="text" placeholder="搜索地点" />
+            </div>
+            <div class="header-right">
+                <a href="javascript:;">确定</a>
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells mt0">
+        <div class="weui-cell top_xuan">
+            <div class="weui-cell__bd">
+                <div class="x_title">发布范围</div>
+            </div>
+            <div class="weui-cell__bd">
+                <span class="xuanz_btn checked">一公里</span>
+            </div>
+            <div class="weui-cell__bd">
+                <span class="xuanz_btn">全区/县</span>
+            </div>
+            <div class="weui-cell__bd">
+                <span class="xuanz_btn">全市</span>
+            </div>
+        </div>
+    </div>
+    <div class="page-bd">
+        <!-- 页面内容-->
+        <div id="container" style="height:100%"></div>
+
+    </div>
+    <div class="small_footer">
+        <div class="foot_list">
+            <div class="weui-cells weui-cells_radio mt0">
+                <label class="weui-cell weui-check__label pd20" for="x11">
+                    <div class="weui-cell__bd">
+                        <p class="x_title">御富科贸园</p>
+                        <p class="x_text">广东省广州市天河区棠下御富科贸园A1</p>
+                    </div>
+                    <div class="weui-cell__ft">
+                        <input type="radio" class="weui-check" name="radio1" id="x11">
+                        <span class="weui-icon-checked"></span>
+                    </div>
+                </label>
+                <label class="weui-cell weui-check__label pd20" for="x12">
+                    <div class="weui-cell__bd">
+                        <p class="x_title">御富科贸园</p>
+                        <p class="x_text">广东省广州市天河区棠下御富科贸园A1</p>
+                    </div>
+                    <div class="weui-cell__ft">
+                        <input type="radio" name="radio1" class="weui-check" id="x12" checked="checked">
+                        <span class="weui-icon-checked"></span>
+                    </div>
+                </label>
+                <label class="weui-cell weui-check__label pd20" for="x13">
+                    <div class="weui-cell__bd">
+                        <p class="x_title">御富科贸园</p>
+                        <p class="x_text">广东省广州市天河区棠下御富科贸园A1</p>
+                    </div>
+                    <div class="weui-cell__ft">
+                        <input type="radio" name="radio1" class="weui-check" id="x13">
+                        <span class="weui-icon-checked"></span>
+                    </div>
+                </label>
+                <label class="weui-cell weui-check__label pd20" for="x14">
+                    <div class="weui-cell__bd">
+                        <p class="x_title">御富科贸园</p>
+                        <p class="x_text">广东省广州市天河区棠下御富科贸园A1</p>
+                    </div>
+                    <div class="weui-cell__ft">
+                        <input type="radio" name="radio1" class="weui-check" id="x14">
+                        <span class="weui-icon-checked"></span>
+                    </div>
+                </label>
+                <label class="weui-cell weui-check__label pd20" for="x15">
+                    <div class="weui-cell__bd">
+                        <p class="x_title">御富科贸园</p>
+                        <p class="x_text">广东省广州市天河区棠下御富科贸园A1</p>
+                    </div>
+                    <div class="weui-cell__ft">
+                        <input type="radio" name="radio1" class="weui-check" id="x15">
+                        <span class="weui-icon-checked"></span>
+                    </div>
+                </label>
+                <label class="weui-cell weui-check__label pd20" for="x16">
+                    <div class="weui-cell__bd">
+                        <p class="x_title">御富科贸园</p>
+                        <p class="x_text">广东省广州市天河区棠下御富科贸园A1</p>
+                    </div>
+                    <div class="weui-cell__ft">
+                        <input type="radio" name="radio1" class="weui-check" id="x16">
+                        <span class="weui-icon-checked"></span>
+                    </div>
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../assets/js/lib/jquery-2.1.4.js"></script>
+<script src="../assets/js/jquery-weui.min.js"></script>
+<script>
+    
+// 举报，加入黑名单
+$(function () {
+    $(".header-right").on("click", ".more_icon", function (e) {
+        $(".right_menu").slideToggle(200);
+    })
+    $(document).bind("click", function (e) {
+        var flas = $(".right_menu").css("display");
+        if (flas === "block") {
+            if ($(e.target).closest(".header-right").length === 0) {
+                $(".right_menu").slideToggle(200);
+            }
+        }
+
+    });
+
+    $("#report").on("click", function () {
+        $.actions({
+            onClose: function () {
+                console.log("close");
+            },
+            actions: [
+                {
+                    text: "淫秽色情",
+                    onClick: function () {
+                        $.alert("举报内容‘淫秽色情’", "举报已提交");
+                    }
+                },
+                {
+                    text: "政治反动",
+                    onClick: function () {
+                        $.alert("举报内容‘政治反动’", "举报已提交");
+                    }
+                },
+                {
+                    text: "恶意谩骂",
+                    onClick: function () {
+                        $.alert("举报内容‘恶意谩骂’", "举报已提交");
+                    }
+                },
+                {
+                    text: "违法犯罪",
+                    onClick: function () {
+                        $.alert("举报内容‘违法犯罪’", "举报已提交");
+                    }
+                },
+                {
+                    text: "虚假信息",
+                    onClick: function () {
+                        $.alert("举报内容‘虚假信息’", "举报已提交");
+                    }
+                },
+                {
+                    text: "其他",
+                    onClick: function () {
+                        $.alert("举报内容‘其他’", "举报已提交");
+                    }
+                }
+            ]
+        });
+    })
+
+    $("#blacklist").on("click", function () {
+        $.confirm({
+            title: '加入黑名单',
+            text: '你将不再收到对方发布的任何消息',
+            onOK: function () {
+                //点击确认
+            },
+            onCancel: function () {
+            }
+        });
+    })
+
+})
+</script>
+<script src="//webapi.amap.com/maps?v=1.3&key=b65f7ba655e25ed2300f273950fe20bd"></script>
+<script>
+    var map = new AMap.Map('container', { resizeEnable: true, zoom: 8 });
+    map.plugin('AMap.Geolocation', function () {
+        geolocation = new AMap.Geolocation({
+            enableHighAccuracy: true,//是否使用高精度定位，默认:true
+            timeout: 10000,          //超过10秒后停止定位，默认：无穷大
+            maximumAge: 0,           //定位结果缓存0毫秒，默认：0
+            convert: true,           //自动偏移坐标，偏移后的坐标为高德坐标，默认：true
+            showButton: true,        //显示定位按钮，默认：true
+            buttonPosition: 'RB',    //定位按钮停靠位置，默认：'LB'，左下角
+            buttonOffset: new AMap.Pixel(10, 40),//定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
+            showMarker: true,        //定位成功后在定位到的位置显示点标记，默认：true
+            showCircle: true,        //定位成功后用圆圈表示定位精度范围，默认：true
+            panToLocation: true,     //定位成功后将定位到的位置作为地图中心点，默认：true
+            zoomToAccuracy: true      //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
+        });
+        map.addControl(geolocation);
+        geolocation.getCurrentPosition();
+        AMap.event.addListener(geolocation, 'complete', onComplete);//返回定位信息
+        AMap.event.addListener(geolocation, 'error', onError);      //返回定位出错信息
+    });
+    // 获取地位坐标
+    function onComplete(data) {
+        // map.clearMap();
+        var str = ['定位成功'];
+        var GetLng = data.position.getLng();
+        var GetLat = data.position.getLat()
+        navCircle(GetLng, GetLat)
+    }
+    // 圆
+    function navCircle(o, x) {
+        var circle = new AMap.Circle({
+            center: new AMap.LngLat(o, x),// 圆心位置
+            radius: 200, //半径
+            strokeColor: "#F33", //线颜色
+            strokeOpacity: 0.35, //线透明度
+            strokeWeight: 1, //线粗细度
+            fillColor: "#fee4e4", //填充颜色
+            fillOpacity: 0.45//填充透明度
+        });
+        circle.setMap(map);
+    }
+</script>
+</body>
+</html>

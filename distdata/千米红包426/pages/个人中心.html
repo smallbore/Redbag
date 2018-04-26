@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+<link rel="stylesheet" href="../assets/css/zpui.css"/>
+<link rel="stylesheet" href="../assets/css/all.css"/>
+<script src="../assets/js/page.js"></script>
+
+    <title>个人中心</title>
+
+</head>
+<body>
+<div class="page">
+    <div class="page-hd">
+         <div class="header">
+    <div class="header-left">
+        <a href="javascript:history.go(-1)" class="left-arrow"></a>
+    </div>
+    <div class="header-title">个人中心</div>
+    <div class="header-right">
+        <a href="javascript:;" class="more_icon">
+            <img src="../assets/images/amore1.png" alt="" />
+        </a>
+        <div class="right_menu">
+            <div class="x_title" id="report">举报</div>
+            <div class="x_title" id="blacklist">加入黑名单</div>
+        </div>
+    </div>
+</div>
+    </div>
+    <div class="page-bd" style="height: 100%;overflow:hidden">
+        <!-- 页面内容-->
+        <div class="bscroll">
+            <div class="weui-top my-top" style="background-image:url(../assets/images/top_bg03.jpg);">
+                <div class="weui-top_img">
+                    <img src="../assets/images/tx00.jpg" alt="" />
+                </div>
+                <div class="weui-top_name">
+                    <div class="x_title">~小情调天使~</div>
+                    <div class="m_title">ID: 1522322811</div>
+                </div>
+            </div>
+
+            <div class="weui-cells mt0 border-none">
+                <a class="weui-cell weui-cell_access" href="红包动态-我发出的红包.html">
+                    <div class="weui-cell__img">
+                        <img src="../assets/images/my_icon1.png" class="my_icon" alt="" />
+                    </div>
+                    <div class="weui-cell__bd">
+                        <div class="x_title">红包动态</div>
+                    </div>
+                    <div class="weui-cell__ft"></div>
+                </a>
+                <a class="weui-cell weui-cell_access" href="在线客服.html">
+                    <div class="weui-cell__img">
+                        <img src="../assets/images/my_icon2.png" class="my_icon" alt="" />
+                    </div>
+                    <div class="weui-cell__bd">
+                        <div class="x_title">在线客服</div>
+                    </div>
+                    <div class="weui-cell__ft">
+                        <div class="x_text">工作日09:00~18:30</div>
+                    </div>
+                </a>
+                <a class="weui-cell weui-cell_access" href="意见反馈.html">
+                    <div class="weui-cell__img">
+                        <img src="../assets/images/my_icon3.png" class="my_icon" alt="" />
+                    </div>
+                    <div class="weui-cell__bd">
+                        <div class="x_title">意见反馈</div>
+                    </div>
+                    <div class="weui-cell__ft"></div>
+                </a>
+                <a class="weui-cell weui-cell_access" href="黑名单.html">
+                    <div class="weui-cell__img">
+                        <img src="../assets/images/my_icon4.png" class="my_icon" alt="" />
+                    </div>
+                    <div class="weui-cell__bd">
+                        <div class="x_title">用户黑名单</div>
+                    </div>
+                    <div class="weui-cell__ft"></div>
+                </a>
+            </div>
+            
+            <div class="weui-cell">
+                <div class="weui-cell__bd pd20">
+                    <a href="javascript:;" class="weui-btn weui-btn_primary">退出账号</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<script src="../assets/js/lib/jquery-2.1.4.js"></script>
+<script src="../assets/js/jquery-weui.min.js"></script>
+<script>
+    
+// 举报，加入黑名单
+$(function () {
+    $(".header-right").on("click", ".more_icon", function (e) {
+        $(".right_menu").slideToggle(200);
+    })
+    $(document).bind("click", function (e) {
+        var flas = $(".right_menu").css("display");
+        if (flas === "block") {
+            if ($(e.target).closest(".header-right").length === 0) {
+                $(".right_menu").slideToggle(200);
+            }
+        }
+
+    });
+
+    $("#report").on("click", function () {
+        $.actions({
+            onClose: function () {
+                console.log("close");
+            },
+            actions: [
+                {
+                    text: "淫秽色情",
+                    onClick: function () {
+                        $.alert("举报内容‘淫秽色情’", "举报已提交");
+                    }
+                },
+                {
+                    text: "政治反动",
+                    onClick: function () {
+                        $.alert("举报内容‘政治反动’", "举报已提交");
+                    }
+                },
+                {
+                    text: "恶意谩骂",
+                    onClick: function () {
+                        $.alert("举报内容‘恶意谩骂’", "举报已提交");
+                    }
+                },
+                {
+                    text: "违法犯罪",
+                    onClick: function () {
+                        $.alert("举报内容‘违法犯罪’", "举报已提交");
+                    }
+                },
+                {
+                    text: "虚假信息",
+                    onClick: function () {
+                        $.alert("举报内容‘虚假信息’", "举报已提交");
+                    }
+                },
+                {
+                    text: "其他",
+                    onClick: function () {
+                        $.alert("举报内容‘其他’", "举报已提交");
+                    }
+                }
+            ]
+        });
+    })
+
+    $("#blacklist").on("click", function () {
+        $.confirm({
+            title: '加入黑名单',
+            text: '你将不再收到对方发布的任何消息',
+            onOK: function () {
+                //点击确认
+            },
+            onCancel: function () {
+            }
+        });
+    })
+
+})
+</script>
+<script src="../assets/js/bscroll.min.js"></script>
+<script>
+    var pagebox = document.querySelector('.page-bd');
+    var pageBox = new BScroll(pagebox, {
+        click: true,
+        probeType: 2,
+        pullUpLoad: {
+            threshold: -40 // 在上拉到超过底部 40px 时，触发 pullingUp 事件
+        },
+    });
+
+    // pageBox.finishPullUp() //数据完成
+    // pageBox.refresh();  //重新计算高度
+</script>
+</body>
+</html>
