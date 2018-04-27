@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    @@include('./include/header.html')
+    <title>米信红包APP下载</title>
+    <style>
+        .map_image img{ width: 100%;}
+        .feng_btn .weui-btn_primary{background-color: #ffc849;background-image:none;color: #ca3737;box-shadow:initial;font-weight:600;}
+        .copy_box{text-align:center;padding:20px 0;color: rgba(255, 255, 255, 0.5);}
+    </style>
+</head>
+<body>
+<div class="page">
+    <div class="page-hd">
+         @@include('./include/page-hd.html', { "title": "米信红包APP下载", "menu": "" })
+    </div>
+    <div class="page-bd feng_bg" style="background-image:url(../assets/images/feng_bg02.jpg);">
+        <!-- 页面内容-->
+        <div class="feng_img" style="padding:20px 0 0;width: 2rem;">
+            <img src="../assets/images/feng_text.png" alt="" />
+        </div>
+        <div class="tc" style="position:relative;z-index:2;">
+            <div class="feng_text">一款基于LBS技术的社交红包APP </div>
+            <div class="feng_text">用户可在附近一公里领取并查看红包内信息</div>
+            <div class="feng_text">让人与人之间的链接更加直接</div>
+        </div>
+        <div class="bottom_box">
+            <div class="map_image">
+                <img src="../assets/images/feng_ticon.png" alt="" />
+            </div>
+            <div class="weui-cell border-none feng_btn">
+                <div class="weui-cell__bd" style="padding:0px 50px 20px;">
+                    <a href="javascript:;" class="weui-btn weui-btn_primary">下载米信红包</a>
+                </div>
+            </div>
+            <div class="copy_box">
+                <span clas="fs22">2018 米信红包 © All Rights Reserved</span>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+@@include('./include/footer.html')
+
+<script>
+    
+</script>
+</body>
+</html>
