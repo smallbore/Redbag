@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    @@include('./include/header.html')
+    <title>授权页面</title>
+    <style>
+        .map_image img{ width: 100%;}
+        .feng_btn .weui-btn_primary{background-color: #ffc849;background-image:none;color: #ca3737;box-shadow:initial;font-weight:600;}
+        .copy_box{text-align:center;padding:20px 0;color: rgba(255, 255, 255, 0.5);}
+        .text_d{text-decoration: underline;color:#808080;}
+        .wx_icon{width:.4rem;height:.4rem;vertical-align: middle;margin-right:.1rem;}
+        .wx_icon ~ span{vertical-align: middle;}
+    </style>
+</head>
+<body>
+<div class="page">
+    <div class="page-hd">
+         @@include('./include/page-hd.html', { "title": "授权页面", "menu": "" })
+    </div>
+    <div class="page-bd feng_bg" style="background-image:none;background-color:#fff;">
+        <!-- 页面内容-->
+        <div class="feng_img" style="padding:20px 0 0;width: 2rem;">
+            <!-- <img src="../assets/images/feng_text.png" alt="" /> -->
+            <div class="bx_title tc" style="font-size:.4rem;">米信红包 </div>
+        </div>
+        <div class="tc" style="position:relative;z-index:2;">
+            <div style="font-size:.2rem;">天天抢红包，零花钱不用愁 </div>
+        </div>
+        <div class="bottom_box">
+            <div class="map_image">
+                <img src="../assets/images/feng_ticon02.png" alt="" />
+            </div>
+            <div class="weui-cell border-none">
+                <div class="weui-cell__bd" style="padding:0px 20px 20px;">
+                    <div class="m_text tc pd20" >登录即表示同意<a href="javascript:;" class="text_d">米信红包用户协议</a></div>
+                    <a href="javascript:;" class="weui-btn weui-btn_primary" style="margin:0 .6rem;">
+                        <img src="../assets/images/wx_icon.png" alt="" class="wx_icon" /><span>微信登录</span>
+                    </a>
+                </div>
+            </div>
+            <div class="copy_box">
+                <span clas="fs22">2018 米信红包 © All Rights Reserved</span>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+@@include('./include/footer.html')
+
+<script>
+    
+</script>
+</body>
+</html>
